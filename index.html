@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ accordion</title>
+  </head>
+  <body>
+    <img
+      class="background"
+      src="background-pattern-desktop.svg"
+      alt="background-pattern-desktop"
+    />
+    <div class="container">
+      <img class="icon-star" src="icon-star.svg" alt="icon-star" />
+      <h1>FAQs</h1>
+      <button id="toggleButton" onclick="moreDetails()">
+        What is Frontend Mentor, and how will it help me?
+      </button>
+      <p id="content">
+        Frontend Mentor offers realistic coding challenges to help developers
+        improve their frontend coding skills with projects in HTML, CSS, and
+        JavaScript. It's suitable for all levels and ideal for portfolio
+        building.
+      </p>
+      <hr />
+      <button id="toggleButton">Is Frontend Mentor free?</button>
+      <hr />
+      <button id="toggleButton">
+        Can I use Frontend Mentor projects in my portfolio?
+      </button>
+      <hr />
+      <button id="toggleButton">
+        How can I get help if I'm stuck on a challenge?
+      </button>
+    </div>
+    <script>
+      function moreDetails() {
+        const details = document.getElementById("content");
+        const button = document.getElementById("toggleButton");
+
+        if (details.style.display === "none" || details.style.display === "") {
+          details.style.display = "block";
+          button.classList.add("active");
+        } else {
+          details.style.display = "none";
+          button.classList.remove("active");
+        }
+      }
+    </script>
+  </body>
+  <style>
+    @font-face {
+      font-family: Italic;
+      src: url(WorkSans-Italic-VariableFont_wght.ttf);
+    }
+    @font-face {
+      font-family: Variable;
+      src: url(WorkSans-VariableFont_wght.ttf);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 100%;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background-color: hsl(275, 100%, 97%);
+    }
+    .background {
+      width: 100%;
+      margin-top: -20px;
+    }
+    .container {
+      background-color: hsl(0, 0%, 100%);
+      width: 500px;
+      margin-top: -145px;
+      padding-top: 40px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      border-radius: 15px;
+    }
+    h1 {
+      float: right;
+      margin-right: 330px;
+      font-family: Variable;
+      font-size: 45px;
+      margin-bottom: 18px;
+    }
+    .icon-star {
+      width: 35px;
+      margin-top: 8px;
+      margin-left: 2px;
+    }
+    button {
+      width: 93%;
+      height: 70px;
+      text-align: left;
+      font-family: Variable;
+      font-weight: 700;
+      font-size: 16px;
+      color: hsl(292, 42%, 14%);
+      cursor: pointer;
+      border: none;
+      display: flex;
+      align-items: center;
+      background-color: hsl(0, 0%, 100%);
+    }
+    button::after {
+      content: url(icon-plus.svg);
+      margin-left: auto;
+    }
+    button.active::after {
+      content: url(icon-minus.svg);
+      margin-left: auto;
+    }
+
+    #content {
+      width: 93%;
+      background-color: hsl(0, 0%, 100%);
+      display: none;
+      font-family: Variable;
+      font-size: 15px;
+      font-weight: 400;
+      color: hsl(0, 0%, 50%);
+      padding-top: 5px;
+      line-height: 22px;
+      margin-bottom: 20px;
+    }
+    hr {
+      width: 93%;
+      border: 1px solid hsl(0, 0%, 98%);
+    }
+  </style>
+</html>
